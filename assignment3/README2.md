@@ -32,17 +32,17 @@ kubectl apply -f app-2-ingress.yaml
 ```
 
 
-Once You have Ran One of These Two Methods You should see an output similar to this (if using method1 ):
-![image]()
+Once You have Ran One of These Two Methods You should see an output similar to this (if using method1):
+![image](https://github.com/Hamd-Khan/ensf400-lab8-kubernetes-2/blob/main/assignment3/Screen%20Shot%202024-04-09%20at%2010.58.26%20AM.png)
 
 Here Is An Example of The Curl Command Running
-![image]()
+![image](https://github.com/Hamd-Khan/ensf400-lab8-kubernetes-2/blob/main/assignment3/Screen%20Shot%202024-04-09%20at%2010.55.51%20AM.png)
 
 Here Is the output showcasing the deployments active while the command is running
-![image]()
+![image](https://github.com/Hamd-Khan/ensf400-lab8-kubernetes-2/blob/main/assignment3/Screen%20Shot%202024-04-09%20at%2011.00.22%20AM.png)
 
 Here is the output showcasing the `kubectl get all command`
-![image]()
+![image](https://github.com/Hamd-Khan/ensf400-lab8-kubernetes-2/blob/main/assignment3/Screen%20Shot%202024-04-09%20at%2011.01.58%20AM.png)
 
 
 If you are having troubles with the initial set up or configuration you can run the following and then rerun the commands at the start

@@ -1,0 +1,24 @@
+
+# Define the API version and the resource type.
+apiVersion: v1
+kind: Service
+
+# Metadata for the Service.
+metadata:
+  # Name of the Service.
+  name: app-1-service
+
+# Specification of the Service.
+spec:
+  # Selector to match with Pods to expose.
+  selector:
+    app: app-1
+  # Ports configuration for the Service.
+  ports:
+  - port: 8080
+    # Port on the Service.
+    targetPort: 3000
+    # Protocol for the port.
+    protocol: TCP
+  # Type of Service to create.
+  type: ClusterIP

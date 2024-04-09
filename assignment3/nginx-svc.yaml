@@ -1,0 +1,27 @@
+
+
+# Define the API version and the resource type.
+apiVersion: v1
+kind: Service
+
+# Metadata for the Service.
+metadata:
+  # Name of the Service.
+  name: nginx-svc
+
+# Specification of the Service.
+spec:
+  # Selector to match with Pods to expose.
+  selector:
+    # Label selector to match Pods controlled by the NGINX application.
+    app: nginx
+  # Type of Service to create.
+  type: ClusterIP
+  # Ports configuration for the Service.
+  ports:
+    # Port configuration for TCP traffic on port 80.
+    - port: 80
+      # Target port on the Pods.
+      targetPort: 80
+      # Protocol for the port (TCP).
+      protocol: TCP

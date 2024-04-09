@@ -1,0 +1,38 @@
+
+
+# Define the API version and the resource type.
+apiVersion: apps/v1
+kind: Deployment
+
+# Metadata for the Deployment.
+metadata:
+  # Name of the Deployment.
+  name: app-2-deployment
+
+# Specification of the Deployment.
+spec:
+  # Number of desired replicas for the Deployment.
+  replicas: 1
+
+  # Selector to match with Pods controlled by this Deployment.
+  selector:
+    matchLabels:
+      app: app-2
+
+  # Template for creating Pods controlled by this Deployment.
+  template:
+    metadata:
+      # Labels for Pods created from this template.
+      labels:
+        app: app-2
+    spec:
+      # Specification for containers within the Pod.
+      containers:
+      - name: app-2
+        # Docker image to use for the container.
+        image: ghcr.io/denoslab/ensf400-sample-app:v2
+        # Policy for pulling the Docker image.
+        imagePullPolicy: Always
+        # Ports to expose from the container.
+        ports:
+        - containerPort: 3000

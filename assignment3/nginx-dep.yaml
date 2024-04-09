@@ -1,0 +1,47 @@
+
+
+# Define the API version and the resource type.
+apiVersion: apps/v1
+kind: Deployment
+
+# Metadata for the Deployment.
+metadata:
+  # Name of the Deployment.
+  name: nginx-dep
+
+# Specification of the Deployment.
+spec:
+  # Number of desired replicas for the Deployment.
+  replicas: 5
+
+  # Selector to match with Pods controlled by this Deployment.
+  selector:
+    matchLabels:
+      app: nginx
+
+  # Template for creating Pods controlled by this Deployment.
+  template:
+    metadata:
+      # Labels for Pods created from this template.
+      labels:
+        app: nginx
+    spec:
+      # Specification for containers within the Pod.
+      containers:
+      - name: nginx
+        # Docker image to use for the container.
+        image: nginx:1.14.2
+        # Ports to expose from the container.
+        ports:
+        - containerPort: 80
+        # Volume mounts for the container.
+        volumeMounts:
+        - name: nginx-config-volume
+          mountPath: /etc/nginx/conf.d
+      # Volumes to be mounted into the Pod.
+      volumes:
+      - name: nginx-config-volume
+        # ConfigMap to be used as a volume source.
+        configMap:
+          # Name of the ConfigMap.
+          name: nginx-configmap

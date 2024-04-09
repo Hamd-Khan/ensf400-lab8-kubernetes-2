@@ -1,0 +1,29 @@
+
+# Define the API version and the resource type.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+# Metadata for the Ingress.
+metadata:
+  # Name of the Ingress.
+  name: app-1-ingress
+
+# Specification of the Ingress.
+spec:
+  # Rules for routing traffic to services.
+  rules:
+  - http:
+      # HTTP routing configuration.
+      paths:
+      - path: /
+        # Path type for the routing.
+        pathType: Prefix
+        # Backend service to route traffic to.
+        backend:
+          # Service to route traffic to.
+          service:
+            # Name of the backend service.
+            name: app-1-service
+            # Port number of the backend service.
+            port:
+              number: 8080

@@ -1,0 +1,38 @@
+
+
+# Define the API version and the resource type.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+# Metadata for the Ingress.
+metadata:
+  # Name of the Ingress.
+  name: ingress
+  # Annotations for additional configuration.
+  annotations:
+    # Rewrites the target URL path to "/".
+    ingress.kubernetes.io/rewrite-target: /
+  # Labels for the Ingress.
+  labels:
+    # Label for identifying the Ingress belongs to the NGINX app.
+    app: nginx
+
+# Specification of the Ingress.
+spec:
+  # Rules for routing traffic to services.
+  rules:
+  - http:
+      # HTTP routing configuration.
+      paths:
+      - path: /nginx
+        # Path type for the routing.
+        pathType: Prefix
+        # Backend service to route traffic to.
+        backend:
+          # Service to route traffic to.
+          service:
+            # Name of the backend service.
+            name: nginx-svc
+            # Port number of the backend service.
+            port:
+              number: 80

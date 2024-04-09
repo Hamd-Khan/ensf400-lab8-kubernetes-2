@@ -51,7 +51,7 @@ If you are having troubles with the initial set up or configuration you can run 
 minikube delete
 ```
 
-If you are done with the program enter to delete the cluster:
+If you are done with the program enter the following command to delete the cluster:
 ```bash
 minikube delete
 ```
